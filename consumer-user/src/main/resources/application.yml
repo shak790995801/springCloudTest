@@ -1,0 +1,20 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: consumer-user
+  #热部署
+  devtools:
+    restart:
+      enabled: true
+      trigger-file: devtools.tg
+user:
+  url: http://localhost:7900/user/
+eureka:
+  client:
+    #registerWithEureka: false
+    #fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://user:123456@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

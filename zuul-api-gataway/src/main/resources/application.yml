@@ -1,0 +1,19 @@
+server:
+  port: 80
+spring:
+  application:
+    name: api-gataway
+zuul:
+  routes:
+    provider-user: /api/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:123456@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true      #显示ip
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,routes

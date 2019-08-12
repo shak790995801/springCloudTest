@@ -1,0 +1,18 @@
+server:
+  port: 8761
+  #因为当前的eureka是单机的，所以我们需要加一些配置
+eureka:
+  client:
+    # 是否把自己作为服务注册到其他服务注册中心
+    registerWithEureka: false
+    # 是否从其他的服务中心同步服务列表
+    fetchRegistry: false
+    serviceUrl:
+      #defaultZone: http://user:123@${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: http://user:123@localhost:10001/eureka/
+      defaultZone: http://user:123456@localhost:8761/eureka/
+spring:
+  security:
+    user:
+      name: user
+      password: 123456
